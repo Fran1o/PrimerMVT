@@ -19,8 +19,8 @@ def crear_familiar(request):
 
             data = formulario.cleaned_data
 
-            familiar = Familia(nombre=data["nombre"], fecha_nacimiento=data["fecha_nacimiento"], edad=data["edad"])
-            familiar.save()
+            familiares = Familia(nombre=data["nombre"], fecha_nacimiento=data["fecha_nacimiento"], edad=data["edad"])
+            familiares.save()
 
     formulario = FamiliaFormulario()
 
@@ -49,18 +49,18 @@ def crear_tios(request):
 
     if request.method == "POST":
 
-        formulario = TiosFormulario(request.POST)
+        formulario_tios = TiosFormulario(request.POST)
 
-        if formulario.is_valid():
+        if formulario_tios.is_valid():
 
-            data = formulario.cleaned_data
+            data = formulario_tios.cleaned_data
 
-            tios = Tios(nombre=data["nombre"], fecha_nacimiento=data["fecha_nacimiento"], edad=data["edad"])
-            tios.save()
+            formulario_tios = Tios(nombre=data["nombre"], fecha_nacimiento=data["fecha_nacimiento"], edad=data["edad"])
+            formulario_tios.save()
 
-    formulario = TiosFormulario()
+    formulario_tios = TiosFormulario()
 
-    return render(request, "familiaresapp/tios_form.html", {"formulario": formulario})
+    return render(request, "familiaresapp/tios_form.html", {"formulario_tios": formulario_tios})
 
 
 

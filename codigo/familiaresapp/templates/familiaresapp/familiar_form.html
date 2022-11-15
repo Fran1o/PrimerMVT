@@ -1,0 +1,19 @@
+{% extends 'familiaresapp/index.html' %}
+
+    {% block agregarfamiliares %}
+
+    <h1>En el siguiente formulario puede agregar un familiar</h1>
+
+        <form action="" method="post">
+
+            {% csrf_token %}
+
+            {{ formulario.as_p }}
+
+            <input type="submit" value="Agregar Familiar">
+
+        </form>
+
+
+    {% endblock %}
+

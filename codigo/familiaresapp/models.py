@@ -5,8 +5,22 @@ class Familia(models.Model):
 
     nombre = models.CharField(max_length=30)
 
-    parentesco = models.CharField(max_length=30)
+    fecha_nacimiento = models.DateField()
 
-    fecha_nacimiento = models.IntegerField()
+    edad = models.IntegerField()
+
+class Primos(models.Model):
+
+    nombre = models.CharField(max_length=30)
+
+    fecha_nacimiento = models.DateField()
+
+    edad = models.IntegerField()
+
+class Tios(models.Model):
+    
+    nombre = models.CharField(max_length=30)
+
+    fecha_nacimiento = models.DateField()
 
     edad = models.IntegerField()

@@ -49,18 +49,18 @@ def crear_tios(request):
 
     if request.method == "POST":
 
-        formulario_tios = TiosFormulario(request.POST)
+        formulario= TiosFormulario(request.POST)
 
-        if formulario_tios.is_valid():
+        if formulario.is_valid():
 
-            data = formulario_tios.cleaned_data
+            data = formulario.cleaned_data
 
-            formulario_tios = Tios(nombre=data["nombre"], fecha_nacimiento=data["fecha_nacimiento"], edad=data["edad"])
-            formulario_tios.save()
+            tios = Tios(nombre=data["nombre"], fecha_nacimiento=data["fecha_nacimiento"], edad=data["edad"])
+            tios.save()
 
-    formulario_tios = TiosFormulario()
+    formulario = TiosFormulario()
 
-    return render(request, "familiaresapp/tios_form.html", {"formulario_tios": formulario_tios})
+    return render(request, "familiaresapp/tios_form.html", {"formulario_tios": formulario})
 
 
 

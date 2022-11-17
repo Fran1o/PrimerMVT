@@ -50,7 +50,7 @@ def crear_primos(request):
 
         formulario = PrimosFormulario()
 
-    return render(request, "familiaresapp/familiar_form.html", {"formulario": formulario})
+    return render(request, "familiaresapp/primos_form.html", {"formulario": formulario})
 
     
 
@@ -74,9 +74,67 @@ def crear_tios(request):
 
         formulario = TiosFormulario()
 
-    return render(request, "familiaresapp/familiar_form.html", {"formulario": formulario})
+    return render(request, "familiaresapp/tios_form.html", {"formulario": formulario})
 
 
+#BUSQUEDA
+
+
+def buscar_familiar(request):
+
+    if request.GET:
+
+        nombre_familiar = request.GET.get("nombre_familiar", "")
+
+        if nombre_familiar == "":
+
+            familiares = []
+
+        else:
+
+            familiares = Familia.objects.filter(nombre__icontains=nombre_familiar)
+
+        return render(request, "familiaresapp/familiar_form.html", {"familiares": familiares})
+
+    return render(request, "familiaresapp/familiar_form.html", {"familiares": [] })
+
+
+def buscar_primos(request):
+
+    if request.GET:
+
+        nombre_primo = request.GET.get("nombre_primo", "")
+
+        if nombre_primo == "":
+
+            primos = []
+
+        else:
+
+            primos = Familia.objects.filter(nombre__icontains=nombre_primo)
+
+        return render(request, "familiaresapp/primos_form.html", {"familiares": primos})
+
+    return render(request, "familiaresapp/primos_form.html", {"familiares": [] })
+
+
+def buscar_tios(request):
+
+    if request.GET:
+
+        nombre_tios = request.GET.get("nombre_tios", "")
+
+        if nombre_tios == "":
+
+            tios = []
+
+        else:
+
+            tios = Familia.objects.filter(nombre__icontains=nombre_tios)
+
+        return render(request, "familiaresapp/familiar_form.html", {"familiares": tios})
+
+    return render(request, "familiaresapp/familiar_form.html", {"familiares": [] })
 
 
 

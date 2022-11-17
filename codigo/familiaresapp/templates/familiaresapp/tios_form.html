@@ -1,6 +1,6 @@
 {% extends 'familiaresapp/index.html' %}
 
-    {% block agregartios %}
+    {% block contenidotios %}
 
     <h1>En el siguiente formulario puede agregar un tio</h1>
 
@@ -13,6 +13,28 @@
             <input type="submit" value="Agregar Tios">
 
         </form>
+
+        <br>
+
+        <form method="get">
+            <h3>Buscar tios por su nombre 
+                <input type="text" name="nombre_familiar" id=""> 
+            </h3>
+            <input type="submit" value="Buscar">
+        </form>
+        
+        {% if tios %}
+        
+        <ul>
+        
+            {% for tio in tios %}
+            <li>
+                {{tios.nombre}}
+            </li>
+            {% endfor %}
+        </ul>
+        
+        {% endif %}
 
 
     {% endblock %}

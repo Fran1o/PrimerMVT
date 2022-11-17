@@ -1,9 +1,21 @@
-# About the project 
+# Informacion del proyecto
 
-My first project in python
-
-# How to use my app
+Mi proyecto cumple la funcion de agregar familiares, primos o tios a mi base de datos. 
 
 
-# Task
+# Como usar la app
+
+Para poder agregar datos hay que ingresar en cualquiera de las sesiones que se encuentran en la barra de navegacion, 
+por ejemplo Familia. Una vez dentro de una sesion en la parte inferior, encontramos un formulario donde podremos ingresar datos 
+y al guardarlos quedaran en mi base de datos.
+
+
+#Rutas disponibles
+
+home/
+familia/
+primos/
+tios/
+
+
 

@@ -1,8 +1,8 @@
 {% extends 'familiaresapp/index.html' %}
 
-    {% block agregarfamiliares %}
+    {% block contenido %}
 
-    <h1>En el siguiente formulario puede agregar un familiar</h1>
+    <h2>EN EL SIGUIENTE FORMULARIO PUEDE AGREGAR UN FAMILIAR</h2>
 
         <form action="" method="post">
 
@@ -13,6 +13,28 @@
             <input type="submit" value="Agregar Familiar">
 
         </form>
+
+        <br>
+
+        <form method="get">
+            <h3>Buscar familiar por su nombre 
+                <input type="text" name="nombre_familiar" id=""> 
+            </h3>
+            <input type="submit" value="Buscar">
+        </form>
+        
+        {% if familiares %}
+        
+        <ul>
+        
+            {% for familiar in familiares %}
+            <li>
+                {{familiar.nombre}}
+            </li>
+            {% endfor %}
+        </ul>
+        
+        {% endif %}
 
 
     {% endblock %}

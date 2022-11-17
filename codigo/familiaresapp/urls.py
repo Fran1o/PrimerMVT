@@ -6,6 +6,7 @@ urlpatterns = [
     path('home/', home),
     path('familia/', crear_familiar),
     path('primos/', crear_primos),
-    path('tios/', crear_tios)
+    path('tios/', crear_tios),
+    
 ]
 

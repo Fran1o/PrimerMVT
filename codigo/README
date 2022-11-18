@@ -13,9 +13,19 @@ y al guardarlos quedaran en mi base de datos.
 #Rutas disponibles
 
 home/
+
 familia/
+buscarfamiliares/
+
 primos/
+buscarprimos/
+
 tios/
+buscartios/
+
+#Comentarios 
+
+Algunas veces no me funcionaba agregar datos, pero probando varias veces me funciona.
 
 
 

@@ -1,8 +1,8 @@
 {% extends 'familiaresapp/index.html' %}
 
-    {% block contenidoprimos %}
+    {% block formprimos %}
 
-    <h1>En el siguiente formulario puede agregar un primo</h1>
+    <h2>EN EL SIGUIENTE FORMULARIO PUEDE AGREGAR UN PRIMO</h2>
 
         <form action="" method="post">
 
@@ -15,26 +15,6 @@
         </form>
 
         <br>
-
-        <form method="get">
-            <h3>Buscar primos por su nombre 
-                <input type="text" name="nombre_familiar" id=""> 
-            </h3>
-            <input type="submit" value="Buscar">
-        </form>
-        
-        {% if primos %}
-        
-        <ul>
-        
-            {% for primo in primos %}
-            <li>
-                {{primo.nombre}}
-            </li>
-            {% endfor %}
-        </ul>
-        
-        {% endif %}
 
 
     {% endblock %}

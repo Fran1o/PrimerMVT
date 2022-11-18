@@ -1,0 +1,25 @@
+{% extends 'familiaresapp/index.html' %}
+
+{% block buscarprimos %}
+
+    <form method="get">
+        <h3>Buscar primos por su nombre 
+            <input type="text" name="nombre_primo" id=""> 
+        </h3>
+        <input type="submit" value="Buscar Primos">
+    </form>
+
+    {% if primos %}
+
+    <ul>
+
+        {% for primo in primos %}
+        <li>
+            {{primo.nombre}}
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+
+{% endblock %}

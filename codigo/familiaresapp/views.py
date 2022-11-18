@@ -80,7 +80,7 @@ def crear_tios(request):
 #BUSQUEDA
 
 
-def buscar_familiar(request):
+def buscar_familiares(request):
 
     if request.GET:
 
@@ -94,9 +94,9 @@ def buscar_familiar(request):
 
             familiares = Familia.objects.filter(nombre__icontains=nombre_familiar)
 
-        return render(request, "familiaresapp/familiar_form.html", {"familiares": familiares})
+        return render(request, "familiaresapp/buscarfamiliares.html", {"familiares": familiares})
 
-    return render(request, "familiaresapp/familiar_form.html", {"familiares": [] })
+    return render(request, "familiaresapp/buscarfamiliares.html", {"familiares": [] })
 
 
 def buscar_primos(request):
@@ -111,11 +111,11 @@ def buscar_primos(request):
 
         else:
 
-            primos = Familia.objects.filter(nombre__icontains=nombre_primo)
+            primos = Primos.objects.filter(nombre__icontains=nombre_primo)
 
-        return render(request, "familiaresapp/primos_form.html", {"familiares": primos})
+        return render(request, "familiaresapp/buscarprimos.html", {"primos": primos})
 
-    return render(request, "familiaresapp/primos_form.html", {"familiares": [] })
+    return render(request, "familiaresapp/buscarprimos.html", {"primos": [] })
 
 
 def buscar_tios(request):
@@ -130,11 +130,11 @@ def buscar_tios(request):
 
         else:
 
-            tios = Familia.objects.filter(nombre__icontains=nombre_tios)
+            tios = Tios.objects.filter(nombre__icontains=nombre_tios)
 
-        return render(request, "familiaresapp/familiar_form.html", {"familiares": tios})
+        return render(request, "familiaresapp/buscartios.html", {"tios": tios})
 
-    return render(request, "familiaresapp/familiar_form.html", {"familiares": [] })
+    return render(request, "familiaresapp/buscartios.html", {"tios": [] })
 
 
 

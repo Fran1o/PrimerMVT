@@ -135,7 +135,3 @@ def buscar_tios(request):
         return render(request, "familiaresapp/buscartios.html", {"tios": tios})
 
     return render(request, "familiaresapp/buscartios.html", {"tios": [] })
-
-
-
-     
